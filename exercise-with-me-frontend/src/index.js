@@ -12,11 +12,11 @@ const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
 const enhancer = compose()
 
 //set up store
-let store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+let myStore = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider>
+    <Provider store={myStore}>
       <App />
     </Provider>
   </React.StrictMode>,

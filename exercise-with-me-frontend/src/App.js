@@ -2,9 +2,19 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+class App extends React.Component{
+
+  componentDidMount(){
+    fetch('https://localhost:3000/exercises/1', {
+      method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+  }
+
+  render(){
+    return (
+      <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -17,10 +27,12 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+
         </a>
       </header>
     </div>
   );
+  }
 }
 
 export default App;

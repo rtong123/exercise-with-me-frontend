@@ -6,13 +6,14 @@ import * as serviceWorker from './serviceWorker';
 import {createStore, applyMiddleware,compose} from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
+import routineReducer from './reducers/routineReducer'
 
 const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose;
 
-const enhancer = compose()
+
 
 //set up store
-let myStore = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+let myStore = createStore(routineReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
   <React.StrictMode>

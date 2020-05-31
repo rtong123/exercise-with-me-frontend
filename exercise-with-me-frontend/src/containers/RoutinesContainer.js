@@ -13,7 +13,9 @@ class RoutinesContainer extends React.Component{
     return(
       <div>
       <Routines routines={this.props.routines}/>
+      <br></br>
       <RoutineForm/>
+
       </div>
     )
   }

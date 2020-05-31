@@ -6,7 +6,7 @@ import {fetchRoutines} from '../actions/fetchRoutines'
 
 class RoutinesContainer extends React.Component{
   componentDidMount(){
-    this.props.fetchRoutines() //need to connect this to store
+    this.props.fetchRoutines() //need to connect this to store --  gets all the accounts and updates the store
   }
 
   render(){

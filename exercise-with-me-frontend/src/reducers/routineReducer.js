@@ -6,8 +6,13 @@ export default function routineReducer(state = {routines:[]}, action){
       //returns state and returns array that points in the fetch request
     }
 
+    case 'ADD_ACCOUNT':
+      return{
+        ...state,
+        routines: [...state.routines, action.payload]}
+    
       default:
         return state
-    }
 
+      }
 }

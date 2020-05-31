@@ -6,14 +6,13 @@ import {fetchRoutines} from '../actions/fetchRoutines'
 
 class RoutinesContainer extends React.Component{
   componentDidMount(){
-    fetchRoutines()
-    // this.props.fetchRoutines()
+    this.props.fetchRoutines() //need to connect this to store
   }
 
   render(){
     return(
       <div>
-      <Routines/>
+      <Routines routines={this.props.routines}/>
       <RoutineForm/>
       </div>
     )
@@ -26,4 +25,6 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(null,mapStateToProps)(RoutinesContainer)
+export default connect(mapStateToProps, {fetchRoutines})(RoutinesContainer)
+
+//map dispatch to props -- connect fetchroutines to store

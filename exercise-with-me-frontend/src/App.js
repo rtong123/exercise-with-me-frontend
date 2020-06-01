@@ -14,7 +14,6 @@ class App extends React.Component{
       <header className="App-header">
         <p>
         </p>
-        App
         <RoutinesContainer/>
 
 

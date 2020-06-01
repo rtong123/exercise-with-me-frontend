@@ -4,15 +4,16 @@ const Routines = (props) => {
   console.log(props)
 return (
   <div>
+    <h1>Exercise Routines</h1>
   {props.routines.map(routine =>
     <li key={routine.id}>
-    Title: {routine.title}
+    <b>Title: </b>{routine.title}
     <br></br>
-    Weight: {routine.body_weight}
+    <b>Weight:</b> {routine.body_weight}
     <br></br>
-    Start Date: {routine.start_date}
+    <b>Start Date:</b>{routine.start_date}
     <br></br>
-    Days: {routine.days}
+    <b>Days:</b> {routine.days}
     <br></br>
     <br></br></li>
     )}

@@ -10,9 +10,8 @@ export default function routineReducer(state = {routines:[]}, action){
       return{
         ...state,
         routines: [...state.routines, action.payload]}
-    
+
       default:
         return state
-
       }
 }

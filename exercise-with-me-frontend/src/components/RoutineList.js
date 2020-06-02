@@ -6,10 +6,10 @@ const Routines = (props) => {
 return (
   <div>
     <h1>Exercise Routines</h1>
-  {props.routines.map(routine =>
-    <div key={routine.id}> <Routine routine={routine}/></div>
-    )}
-
+   {props.routines.map(routine =>
+     <div key={routine.id}> <Routine routine={routine}/></div>
+ )}
+hi
 
   </div>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import Routines from '../components/RoutineList'
+import Routine from '../components/Routine'
 import RoutineForm from '../components/RoutineForm'
 import {connect} from 'react-redux'
 import {fetchRoutines} from '../actions/fetchRoutines'
@@ -14,7 +15,8 @@ class RoutinesContainer extends React.Component{
     return(
       <div>
       <Route path='/routines/new' component={RoutineForm}/>
-      <Route exact path='/routines' render={() => <Routines routines={this.props.routines}/>}/>
+      <Route path='/routines/:id' render={(routerProps) => <Routine {...routerProps} routine={this.props.accounts}/>}/>
+      <Route path='/routines' render={(routerProps) => <Routines {...routerProps} routines={this.props.routines}/>}/>
       <br></br>
 
 

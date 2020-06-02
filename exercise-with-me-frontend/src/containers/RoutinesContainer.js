@@ -3,6 +3,7 @@ import Routines from '../components/RoutineList'
 import RoutineForm from '../components/RoutineForm'
 import {connect} from 'react-redux'
 import {fetchRoutines} from '../actions/fetchRoutines'
+import {Route} from 'react-router-dom'
 
 class RoutinesContainer extends React.Component{
   componentDidMount(){
@@ -12,9 +13,10 @@ class RoutinesContainer extends React.Component{
   render(){
     return(
       <div>
-      <Routines routines={this.props.routines}/>
+      <Route path='/routines/new' component={RoutineForm}/>
+      <Route exact path='/routines' render={() => <Routines routines={this.props.routines}/>}/>
       <br></br>
-      <RoutineForm/>
+
 
       </div>
     )

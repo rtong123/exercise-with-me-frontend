@@ -1,6 +1,6 @@
 import React from 'react'
 import Routine from './Routine'
-import {Route} from 'react-router-dom'
+import {Route, Link} from 'react-router-dom'
 
 
 const Routines = (props) => {
@@ -10,7 +10,8 @@ return (
     <h1>Exercise Routines</h1>
     hi
    {props.routines.map(routine =>
-     <div key={routine.id}> <Routine routine={routine}/></div>)}
+     <div key={routine.id}> <Link to={`/routines/${routine.id}`}>{routine.title}</Link>
+     </div>)}
 
 
 

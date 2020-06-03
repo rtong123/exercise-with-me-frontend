@@ -15,12 +15,12 @@ class RoutinesContainer extends React.Component{
     return(
       <div>
       <Route path='/routines/new' component={RoutineForm}/>
-      <Route path='/routines/:id' render={(routerProps) => <Routine {...routerProps} routine={this.props.routines}/>}/>
-      <Route path='/routines' render={(routerProps) => <Routines {...routerProps} routines={this.props.routines}/>}/>
-      //pass router props in addition to props being passed in
+      <Route path='/routines/:id' render={(routerProps) => <Routine {...routerProps} routines={this.props.routines}/>}/>
+      <Route exact path='/routines' render={(routerProps) => <Routines {...routerProps} routines={this.props.routines}/>}/>
+
       <br></br>
 
-
+  //pass router props in addition to props being passed in
       </div>
     )
   }

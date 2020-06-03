@@ -4,10 +4,11 @@ import React from 'react'
 
 const Routine = (props) => {
 
-let routine = props.routines[props.match.params.id - 1]
+console.log(props)
+let routine = props.routines[(props.match.params.id)]
   return(
 <div>
-  {routine ? routine.title : null}
+  routine
 </div>
   )
 }

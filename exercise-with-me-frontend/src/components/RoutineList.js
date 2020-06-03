@@ -9,7 +9,7 @@ return (
    {props.routines.map(routine =>
      <div key={routine.id}> <Routine routine={routine}/></div>
  )}
-hi
+
 
   </div>
   )

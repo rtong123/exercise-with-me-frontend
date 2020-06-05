@@ -7,7 +7,7 @@ import ExercisesContainer from '../containers/ExercisesContainer'
 const Routine = (props) => {
 
 let routine = props.routines[props.match.params.id - 1]
-
+  console.log(routine)
 
   return(
     <div>

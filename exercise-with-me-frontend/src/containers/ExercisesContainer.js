@@ -8,7 +8,7 @@ class ExercisesContainer extends React.Component{
     return(
       <div>
       <ExerciseForm/>
-      <ExerciseList exercises={this.props.routine.exercises}/>
+      <ExerciseList exercises={this.props.routine && this.props.routine.exercises}/>
 
       </div>
     )

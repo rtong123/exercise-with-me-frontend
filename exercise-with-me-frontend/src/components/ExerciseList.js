@@ -3,7 +3,7 @@ import React from 'react'
 const Exercises = (props) => {
   return(
     <div>
-    hi
+    Exercises
     </div>
   )
 }

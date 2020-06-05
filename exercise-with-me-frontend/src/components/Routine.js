@@ -7,7 +7,7 @@ import ExercisesContainer from '../containers/ExercisesContainer'
 const Routine = (props) => {
 
 let routine = props.routines[props.match.params.id - 1]
-  console.log(routine)
+console.log(routine)
 
   return(
     <div>
@@ -18,7 +18,7 @@ let routine = props.routines[props.match.params.id - 1]
          <b> Days: </b> {routine ? routine.days : null}<br></br>
         <button>Update Routine</button> <button>Delete Routine</button>
 
-        <ExercisesContainer routine={routine}/>
+        <ExercisesContainer exercises={routine.exercises}/>
     </div>
     )
   }

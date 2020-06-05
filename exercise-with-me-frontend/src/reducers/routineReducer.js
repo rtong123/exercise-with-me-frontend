@@ -1,7 +1,7 @@
 export default function routineReducer(state = {routines:[]}, action){
   switch(action.type){
     case 'FETCH_ROUTINES':
-    console.log(action.payload)
+
       return {
       routines: action.payload
       //returns state and returns array that points in the fetch request
@@ -11,6 +11,7 @@ export default function routineReducer(state = {routines:[]}, action){
       return{
         ...state,
         routines: [...state.routines, action.payload]}
+
 
       default:
         return state

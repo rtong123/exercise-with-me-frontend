@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {connect} from 'react-redux'
 import RoutinesContainer from './containers/RoutinesContainer'
+import ExercisesContainer from './containers/ExercisesContainer'
 
 class App extends React.Component{
 
@@ -15,7 +16,7 @@ class App extends React.Component{
         <p>
         </p>
         <RoutinesContainer/>
-
+        <ExercisesContainer/>
 
       </header>
     </div>

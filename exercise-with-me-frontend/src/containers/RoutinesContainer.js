@@ -2,6 +2,7 @@ import React from 'react'
 import Routines from '../components/RoutineList'
 import Routine from '../components/Routine'
 import RoutineForm from '../components/RoutineForm'
+import ExerciseForm from '../components/ExerciseForm'
 import {connect} from 'react-redux'
 import {fetchRoutines} from '../actions/fetchRoutines'
 import {Route, Switch} from 'react-router-dom'
@@ -18,6 +19,7 @@ class RoutinesContainer extends React.Component{
       <Route path='/routines/new' component={RoutineForm}/>
       <Route path='/routines/:id' render={(routerProps) => <Routine {...routerProps} routines={this.props.routines}/>}/>
       <Route path='/routines' render={(routerProps) => <Routines {...routerProps} routines={this.props.routines}/>}/>
+      <Route path='/exercises/new'></Route>
       <br></br>
       </Switch>
       </div>

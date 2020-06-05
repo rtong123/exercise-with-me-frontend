@@ -6,7 +6,7 @@ class ExerciseForm extends React.Component{
     name:'',
     type_of_exercise:'',
     equipment:'',
-    sets:''
+    sets:'',
     reps:''
   }
 
@@ -26,8 +26,8 @@ class ExerciseForm extends React.Component{
         <label>Sets</label>
         <input type='text' value={this.state.sets} name="sets" onChange={this.handleChange}/><br></br>
         //need to add hidden routine id
+        <br></br>
         <input type='submit'></input>
-
       </form>
       </div>
     )

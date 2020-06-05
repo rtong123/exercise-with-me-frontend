@@ -19,8 +19,6 @@ class RoutinesContainer extends React.Component{
       <Route exact path='/routines' render={(routerProps) => <Routines {...routerProps} routines={this.props.routines}/>}/>
 
       <br></br>
-
-  //pass router props in addition to props being passed in
       </div>
     )
   }

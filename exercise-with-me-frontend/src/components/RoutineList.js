@@ -8,9 +8,8 @@ const Routines = (props) => {
 return (
   <div>
     <h1>Exercise Routines</h1>
-    hi
-   {props.routines.map(routine =>
-     <div key={routine.id}> <Link to={`/routines/${routine.id}`}>{routine.title}</Link>
+    {props.routines.map(routine =>
+      <div key={routine.id}> <Link to={`/routines/${routine.id}`}>{routine.title}</Link>
      </div>)}
 
 

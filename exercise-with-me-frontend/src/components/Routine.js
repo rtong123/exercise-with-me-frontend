@@ -17,8 +17,7 @@ console.log(routine)
          <b> Start Date: </b> {routine ? routine.date : null} <br></br>
          <b> Days: </b> {routine ? routine.days : null}<br></br>
         <button>Update Routine</button> <button>Delete Routine</button>
-
-        <ExercisesContainer exercises={routine.exercises}/>
+        <ExercisesContainer routine={routine}/>
     </div>
     )
   }

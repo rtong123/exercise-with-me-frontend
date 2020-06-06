@@ -5,7 +5,9 @@ console.log(props.exercises)
 
   return(
     <div>
-      {props.exercises.map(exercise => exercise.title)}
+      {props.exercises && props.exercises.map(exercise =>
+
+        <li key={exercise.id}> {exercise.name} </li>)}
     </div>
   )
 }

@@ -5,6 +5,7 @@ class ExerciseForm extends React.Component{
 
   state = {
     name:'',
+    //maybe add a default value if change to dropdown
     type_of_exercise:'',
     equipment:'',
     sets:'',
@@ -17,10 +18,14 @@ class ExerciseForm extends React.Component{
     })
   }
 
+  handleSubmit = event => {
+    event.preventDefault()
+  }
+
   render(){
     return(
       <div>
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h1>Exercise Form</h1>
         <label>Name</label>
         <input type='text' value={this.state.name} name="name" onChange={this.handleChange} /><br></br>

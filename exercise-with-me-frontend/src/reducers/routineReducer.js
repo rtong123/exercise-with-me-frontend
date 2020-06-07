@@ -16,15 +16,16 @@ export default function routineReducer(state = {routines:[]}, action){
 
     case 'ADD_EXERCISE':
     //find id  then add to routine id
+    console.log(action.payload)
     return{...state, routines: state.routines.map(routine => {
-      if (routine.id === action.payload.id) {
-        return action.payload
+      if (routine.id === action.payload.routine_id) {
+        routine.exercises = [...routine.exercises,action.payload]
+        return routine
       }
       else{
         return routine
       }
     })
-
     }
 
       default:

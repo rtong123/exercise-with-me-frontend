@@ -1,15 +1,19 @@
 export const addExercise = (exercise, routineId) => {
 
   return(dispatch) => {
-    fetch(`http://localhost:3000/routines/${routineId}`, {
+    console.log(exercise,routineId)
+    fetch('http://localhost:3000/exercises', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(exercise)
+      body: JSON.stringify({exercise: exercise,
+            routine_id: routineId,
+          })
+
     })
     .then(response => response.json())
-    .then(routine => dispatch({type: 'ADD_EXERCISE', payload: routine}))
+    .then(exercise => dispatch({type: 'ADD_EXERCISE', payload: exercise}))
   }
 
 }

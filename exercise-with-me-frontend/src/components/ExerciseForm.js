@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux'
 
 class ExerciseForm extends React.Component{
 
@@ -10,13 +11,19 @@ class ExerciseForm extends React.Component{
     reps:''
   }
 
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
   render(){
     return(
       <div>
       <form>
         <h1>Exercise Form</h1>
         <label>Name</label>
-        <input type='text' value={this.state.name} name="name"/><br></br>
+        <input type='text' value={this.state.name} name="name" onChange={this.handleChange} /><br></br>
         <label>Type of Exercise</label>
         <input type='text' value={this.state.type_of_exercise} name="type_of_exercise" onChange={this.handleChange}/><br></br>
         <label>Equipment</label>
@@ -35,5 +42,8 @@ class ExerciseForm extends React.Component{
 
 }
 
+const mapDispatchToProps = () => {
 
-export default ExerciseForm
+}
+
+export default connect(null,mapDispatchToProps)(ExerciseForm)

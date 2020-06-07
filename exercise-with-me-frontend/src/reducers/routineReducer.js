@@ -15,6 +15,9 @@ export default function routineReducer(state = {routines:[]}, action){
 
     case 'ADD_EXERCISE':
     //find id  then add to routine id
+    return{
+      
+    }
 
       default:
         return state

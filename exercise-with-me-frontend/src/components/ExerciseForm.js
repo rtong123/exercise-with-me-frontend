@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import {addExercise} from '../actions/addExercise'
 
 class ExerciseForm extends React.Component{
 
@@ -20,6 +21,15 @@ class ExerciseForm extends React.Component{
 
   handleSubmit = event => {
     event.preventDefault()
+    this.props.addExercise(this.state,this.props.id)
+    this.setState({
+      name:'',
+      type_of_exercise:'',
+      equipment:'',
+      sets:'',
+      reps:''
+    })
+    //also need routine id
   }
 
   render(){
@@ -47,8 +57,5 @@ class ExerciseForm extends React.Component{
 
 }
 
-const mapDispatchToProps = () => {
 
-}
-
-export default connect(null,mapDispatchToProps)(ExerciseForm)
+export default connect(null,{addExercise})(ExerciseForm)

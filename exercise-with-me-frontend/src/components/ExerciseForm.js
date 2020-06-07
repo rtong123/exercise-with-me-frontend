@@ -21,7 +21,8 @@ class ExerciseForm extends React.Component{
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.addExercise(this.state,this.props.id)
+    this.props.addExercise(this.state,this.props.routine.id)
+    console.log(this.props.routine.id)
     this.setState({
       name:'',
       type_of_exercise:'',

@@ -1,4 +1,5 @@
 export default function routineReducer(state = {routines:[]}, action){
+
   switch(action.type){
     case 'FETCH_ROUTINES':
 
@@ -15,8 +16,15 @@ export default function routineReducer(state = {routines:[]}, action){
 
     case 'ADD_EXERCISE':
     //find id  then add to routine id
-    return{
-      
+    return{...state, routines: state.routines.map(routine => {
+      if (routine.id === action.payload.id) {
+        return action.payload
+      }
+      else{
+        return routine
+      }
+    })
+
     }
 
       default:

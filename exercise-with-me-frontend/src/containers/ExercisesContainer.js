@@ -11,10 +11,9 @@ class ExercisesContainer extends React.Component{
 
     return(
       <div>
-      <ExerciseList exercises={this.props.routine && this.props.routine.exercises}/>
       <ExerciseForm routine={this.props.routine}/>
+      <ExerciseList exercises={this.props.routine && this.props.routine.exercises}/>
       <Route path='/exercises/new' component={ExerciseForm}/>
-      <Route path='/exercises' component={ExerciseList}/>
       </div>
     )
   }

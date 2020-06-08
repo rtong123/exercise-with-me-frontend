@@ -15,8 +15,7 @@ class RoutinesContainer extends React.Component{
   render(){
     return(
       <div>
-      <Switch>
-
+        <Switch>
       <Route path='/routines/new' component={RoutineForm}/>
       <Route path='/routines/:id' render={(routerProps) => <Routine {...routerProps} routines={this.props.routines}/>}/>
       <Route path='/routines' render={(routerProps) => <Routines {...routerProps} routines={this.props.routines}/>}/>

@@ -1,15 +1,13 @@
-//functional componenet
 
 import React from 'react'
 import ExercisesContainer from '../containers/ExercisesContainer'
-import ExerciseList from './ExerciseList'
+
 
 
 const Routine = (props) => {
 
-let routine = props.routines[props.match.params.id - 1] && props.routines[props.match.params.id - 1]
-console.log(routine.exercises)
-//keeps saying undefined
+let routine = props.routines[props.match.params.id - 1]
+console.log(routine)
 
   return(
     <div>
@@ -19,7 +17,7 @@ console.log(routine.exercises)
          <b> Start Date: </b> {routine ? routine.date : null} <br></br>
          <b> Days: </b> {routine ? routine.days : null}<br></br>
         <button>Update Routine</button> <button>Delete Routine</button>
-
+        <ExercisesContainer routine={routine}/>
 
     </div>
     )

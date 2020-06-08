@@ -1,7 +1,7 @@
 //functional componenet
 
 import React from 'react'
-import ExercisesContainer from '../containers/ExercisesContainer'
+import ExerciseForm from './ExerciseForm'
 
 
 
@@ -18,7 +18,7 @@ console.log(routine)
          <b> Start Date: </b> {routine ? routine.date : null} <br></br>
          <b> Days: </b> {routine ? routine.days : null}<br></br>
         <button>Update Routine</button> <button>Delete Routine</button>
-        <ExercisesContainer routine={routine}/>
+        <ExerciseForm routine={routine}/>
 
     </div>
     )

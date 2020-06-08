@@ -1,7 +1,8 @@
 import React from 'react'
 
 const Exercises = (props) => {
-console.log(props.exercises)
+
+
 
   return(
     <div>

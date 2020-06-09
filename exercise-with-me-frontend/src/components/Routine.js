@@ -2,13 +2,16 @@
 import React from 'react'
 import ExercisesContainer from '../containers/ExercisesContainer'
 import ExerciseForm from './ExerciseForm'
+import {Route,Link} from 'react-router-dom'
+
 
 
 
 const Routine = (props) => {
 
 let routine = props.routines[props.match.params.id - 1]
-console.log(routine)
+
+
 
   return(
     <div>
@@ -17,9 +20,11 @@ console.log(routine)
          <b>Body Weight:</b> {routine ? routine.body_weight : null} <br></br>
          <b> Start Date: </b> {routine ? routine.date : null} <br></br>
          <b> Days: </b> {routine ? routine.days : null}<br></br>
-        <button>Update Routine</button> <button>Delete Routine</button>
+        <Link to="/exercises/new"> New Exercise </Link>
+          <button>Delete Routine</button>
+
         <ExercisesContainer routine={routine}/>
-              <ExerciseForm routine={routine}/>
+        <ExerciseForm routine={routine}/>
 
     </div>
     )

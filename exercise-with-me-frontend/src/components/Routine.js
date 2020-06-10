@@ -20,11 +20,11 @@ let routine = props.routines[props.match.params.id - 1]
          <b>Body Weight:</b> {routine ? routine.body_weight : null} <br></br>
          <b> Start Date: </b> {routine ? routine.date : null} <br></br>
          <b> Days: </b> {routine ? routine.days : null}<br></br>
-        <Link to="/exercises/new"> New Exercise </Link>
-          <button>Delete Routine</button>
+         <br></br>
 
+       
         <ExercisesContainer routine={routine}/>
-        <ExerciseForm routine={routine}/>
+        <ExerciseForm routine={routine}/>  <button>Delete Routine</button>
 
     </div>
     )

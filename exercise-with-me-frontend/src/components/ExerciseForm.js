@@ -37,7 +37,7 @@ class ExerciseForm extends React.Component{
     return(
       <div>
       <form onSubmit={this.handleSubmit}>
-        <h1>Exercise Form</h1>
+
         <label>Name</label>
         <input type='text' value={this.state.name} name="name" onChange={this.handleChange} /><br></br>
         <label>Type of Exercise</label>
@@ -48,9 +48,8 @@ class ExerciseForm extends React.Component{
         <input type='text' value={this.state.reps} name="reps" onChange={this.handleChange}/><br></br>
         <label>Sets</label>
         <input type='text' value={this.state.sets} name="sets" onChange={this.handleChange}/><br></br>
-        //need to add hidden routine id
         <br></br>
-        <input type='submit'></input>
+        <input type='submit' value='Update Routine'></input>
       </form>
       </div>
     )

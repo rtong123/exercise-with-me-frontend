@@ -19,7 +19,6 @@ class App extends React.Component{
         </p>
         <RoutinesContainer/>
         <ExercisesContainer/>
-        <ExerciseList/>
 
       </header>
     </div>

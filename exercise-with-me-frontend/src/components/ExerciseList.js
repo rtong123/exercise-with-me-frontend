@@ -4,8 +4,9 @@ import {deleteExercise} from '../actions/deleteExercise'
 
 const Exercises = (props) => {
 
-const handleDelete = () => {
-props.deleteExercise()
+const handleDelete = (routineId,exerciseId) => {
+  console.log(exerciseId)
+props.deleteExercise(routineId,exerciseId)
 }
 
   return(
@@ -20,7 +21,7 @@ props.deleteExercise()
           <b>Exercise Sets:</b>{exercise.sets} <br></br>
           <b>Exercise Reps:</b>{exercise.reps} <br></br>
           <br></br>
-            <button onClick={props.deleteExercise}> Delete Exercise</button>
+            <button onClick={() => handleDelete(exercise.routine_id,exercise.id)}> Delete Exercise</button>
          </li>
        )}
     </div>

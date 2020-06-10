@@ -9,7 +9,7 @@ render(){
       <ul id="nav">
                <li><Link to={'/routines'}>Routines</Link></li>
                <li><Link to={'/routines/new'}>New Routine</Link></li>
-               <li><a href="/aboutme">FAQ</a></li>
+               <li><a href="/aboutme">About Me</a></li>
       </ul>
     </div>
   )

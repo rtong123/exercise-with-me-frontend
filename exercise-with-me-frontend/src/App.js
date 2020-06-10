@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import RoutinesContainer from './containers/RoutinesContainer'
 import ExercisesContainer from './containers/ExercisesContainer'
 import Navbar from './components/Navbar'
+import Header from './components/Header'
 
 
 
@@ -19,6 +20,7 @@ class App extends React.Component{
       <header className="App-header">
         <p>
         </p>
+        <Header/>
         <Navbar/>
         <RoutinesContainer/>
         <ExercisesContainer/>

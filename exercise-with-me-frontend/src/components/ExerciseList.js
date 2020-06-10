@@ -1,9 +1,11 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {deleteExercise} from '../actions/deleteExercise'
 
 const Exercises = (props) => {
 
 const handleDelete = () => {
-
+props.deleteExercise()
 }
 
   return(
@@ -18,11 +20,11 @@ const handleDelete = () => {
           <b>Exercise Sets:</b>{exercise.sets} <br></br>
           <b>Exercise Reps:</b>{exercise.reps} <br></br>
           <br></br>
-            <button> Delete Exercise</button>
+            <button onClick={props.deleteExercise}> Delete Exercise</button>
          </li>
        )}
     </div>
   )
 }
 
-export default Exercises
+export default connect(null, {deleteExercise})(Exercises)

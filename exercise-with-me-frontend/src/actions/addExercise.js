@@ -2,7 +2,7 @@ export const addExercise = (exercise, routineId) => {
 
   return(dispatch) => {
     console.log(exercise,routineId)
-    fetch('http://localhost:3000/exercises', {
+    fetch(`http://localhost:3000/routines/${routineId}/exercises`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

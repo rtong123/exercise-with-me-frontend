@@ -4,7 +4,8 @@ import './App.css';
 import {connect} from 'react-redux'
 import RoutinesContainer from './containers/RoutinesContainer'
 import ExercisesContainer from './containers/ExercisesContainer'
-import ExerciseList from '././components/ExerciseList'
+import Navbar from './components/Navbar'
+
 
 
 class App extends React.Component{
@@ -13,15 +14,21 @@ class App extends React.Component{
 
   render(){
     return (
+
       <div className="App">
       <header className="App-header">
         <p>
         </p>
         <RoutinesContainer/>
         <ExercisesContainer/>
-
+        <Navbar/>
       </header>
+
+
+
     </div>
+
+
   );
   }
 }

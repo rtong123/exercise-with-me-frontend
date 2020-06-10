@@ -2,7 +2,9 @@ import React from 'react'
 
 const Exercises = (props) => {
 
+const handleDelete = () => {
 
+}
 
   return(
     <div id="exercises">
@@ -16,6 +18,7 @@ const Exercises = (props) => {
           <b>Exercise Sets:</b>{exercise.sets} <br></br>
           <b>Exercise Reps:</b>{exercise.reps} <br></br>
           <br></br>
+            <button> Delete Exercise</button>
          </li>
        )}
     </div>

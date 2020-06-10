@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
+import AboutMe from './AboutMe'
 
 class Navbar extends React.Component{
 
@@ -9,8 +10,10 @@ render(){
       <ul id="nav">
                <li><Link to={'/routines'}>Routines</Link></li>
                <li><Link to={'/routines/new'}>New Routine</Link></li>
-               <li><a href="/aboutme">About Me</a></li>
+               <li><Link to={'/aboutme'}>About Me</Link></li>
+
       </ul>
+          
     </div>
   )
 }

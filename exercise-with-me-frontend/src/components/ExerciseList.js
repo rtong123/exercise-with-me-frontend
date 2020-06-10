@@ -6,9 +6,10 @@ const Exercises = (props) => {
 
   return(
     <div>
-    
+
 
       {props.exercises && props.exercises.map(exercise =>
+    
         <li key={exercise.id}>
           <b>Exercise Name:</b>{exercise.name} <br></br>
           <b>Exercise Equipment:</b>{exercise.equipment} <br></br>

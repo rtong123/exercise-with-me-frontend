@@ -8,6 +8,7 @@ import {fetchRoutines} from '../actions/fetchRoutines'
 import {Route, Switch} from 'react-router-dom'
 
 class RoutinesContainer extends React.Component{
+  
   componentDidMount(){
     this.props.fetchRoutines() //need to connect this to store --  gets all the accounts and updates the store
   }

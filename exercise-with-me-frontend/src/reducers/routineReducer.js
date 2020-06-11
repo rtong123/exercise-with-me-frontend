@@ -29,7 +29,7 @@ export default function routineReducer(state = {routines:[]}, action){
     }
 
     case 'DELETE_EXERCISE':
-    debugger
+    //delete the exercise from the routine
     return{...state, routines: state.routines.map(routine => {
       if (routine.id === action.payload.routine_id) {
         routine.exercises = [...routine.exercises,action.payload]

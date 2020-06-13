@@ -12,7 +12,7 @@ export const addRoutine = (data) => {
     .then(resp => resp.json())
     //converting back to json
     .then(routine => dispatch({
-      type:'ADD_ACCOUNT',
+      type:'ADD_ROUTINE',
       payload: routine
     }))
     //dispatching -> go straight to reducer  and type of add account

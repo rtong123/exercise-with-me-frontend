@@ -5,10 +5,12 @@ import {Route} from 'react-router-dom'
 
 
 
+
+
 class ExercisesContainer extends React.Component{
 
-  render(){
 
+  render(){
     return(
       <div>
       <ExerciseList exercises={this.props.routine && this.props.routine.exercises}/>

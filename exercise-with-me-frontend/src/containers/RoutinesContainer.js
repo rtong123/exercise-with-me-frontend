@@ -5,15 +5,13 @@ import RoutineForm from '../components/RoutineForm'
 import ExerciseForm from '../components/ExerciseForm'
 import {connect} from 'react-redux'
 import {fetchRoutines} from '../actions/fetchRoutines'
-import {fetchExercises} from '../actions/fetchExercises'
 import {Route, Switch} from 'react-router-dom'
 
 class RoutinesContainer extends React.Component{
 
   componentDidMount(){
     this.props.fetchRoutines()
-    this.props.fetchExercises()
-     //need to connect this to store --  gets all the accounts and updates the store
+   //need to connect this to store --  gets all the accounts and updates the store
   }
 
   render(){

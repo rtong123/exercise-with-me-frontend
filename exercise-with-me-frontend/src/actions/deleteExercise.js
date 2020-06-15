@@ -9,7 +9,7 @@ export const deleteExercise = (routineId,exerciseId) => {
     .then(exercise => dispatch({
 
       type: 'DELETE_EXERCISE',
-      payload: routineId
+      payload: {routineId,exerciseId}
     }))
   }
 }

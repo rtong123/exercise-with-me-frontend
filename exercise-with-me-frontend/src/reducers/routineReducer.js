@@ -8,10 +8,6 @@ export default function routineReducer(state = {routines:[]}, action){
       //returns state and returns array that points in the fetch request
     }
 
-    case 'FETCH_EXERCISES':
-    return{
-      routines: action.payload
-    }
 
     case 'ADD_ROUTINE':
       return{
@@ -20,8 +16,6 @@ export default function routineReducer(state = {routines:[]}, action){
 
 
     case 'ADD_EXERCISE':
-    //find id  then add to routine id
-
     return{...state, routines: state.routines.map(routine => {
       if (routine.id === action.payload.routine_id) {
 
@@ -36,18 +30,17 @@ export default function routineReducer(state = {routines:[]}, action){
 
     case 'DELETE_EXERCISE':
     //delete the exercise from the routine
-    // return{...state, routines: state.routines.map(routine => {
-    //   // if (routine.id === action.payload.routine_id) {
-    //   //   routine.exercises = [...routine.exercises,action.payload]
-    //   //   return routine
-    //   // }
-    //   // else{
-    //   //   return routine
-    //   // }
-    //
-    // })
+
+    const routines =  state.routines.map(routine => {
+      if (routine.id === action.payload.routineId){
+        console.log(routine)
+        routine.exercises = routine.exercises.filter(exercise => exercise.id !== action.payload.exerciseId)
+        console.log(routine.exercises)
+      }
+      return routine
+    })
     return {
-      routines: [...state.routines.filter(routine => routine.id !== action.payload.routineId)]
+      routines: [...state.routines,routines]
     }
 
     // match exercise id --> adn get it out of routines.

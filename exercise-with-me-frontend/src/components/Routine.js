@@ -10,8 +10,9 @@ import {deleteRoutine} from '../actions/deleteRoutine'
 
 
 const Routine = (props) => {
-
+//its UNDEFINED!!!!!!
 let routine = props.routines.find(element => element.id == props.match.params.id)
+console.log(routine)
 
 
 
@@ -22,7 +23,7 @@ props.history.push('/routines')
 
   return(
     <div>
-      <h1>Routine {props.match.params.id}</h1>
+      // <h1>Routine {props.match.params.id}</h1>
         <b>Routine Title:</b> {routine ? routine.title : null} <br></br>
          <b>Body Weight:</b> {routine ? routine.body_weight : null} lbs <br></br>
          <b> Start Date: </b> {routine ? routine.start_date : null} <br></br>

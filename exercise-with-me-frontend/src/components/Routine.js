@@ -1,4 +1,3 @@
-
 import React from 'react'
 import ExercisesContainer from '../containers/ExercisesContainer'
 import ExerciseForm from './ExerciseForm'

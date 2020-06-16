@@ -22,7 +22,6 @@ class RoutineForm extends React.Component{
   handleSubmit = event => {
     event.preventDefault()
     this.props.addRoutine(this.state)
-    console.log(this.state)
     this.setState({
       title: '',
       body_weight: '',

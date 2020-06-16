@@ -17,6 +17,7 @@ props.deleteExercise(routineId,exerciseId)
 
         <li key={exercise.id}>
           <b>Exercise Name:</b>{exercise.name} <br></br>
+          <b>Type of Exercise:</b>{exercise.type_of_exercise} <br></br>
           <b>Exercise Equipment:</b>{exercise.equipment} <br></br>
           <b>Exercise Sets:</b>{exercise.sets} <br></br>
           <b>Exercise Reps:</b>{exercise.reps} <br></br>

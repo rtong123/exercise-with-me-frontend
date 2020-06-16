@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addRoutine} from '../actions/addRoutine'
+import { withRouter } from 'react-router';
+
 
 class RoutineForm extends React.Component{
 
@@ -26,6 +28,7 @@ class RoutineForm extends React.Component{
       start_date: '',
       days: ''
     })
+    this.props.history.push('/routines')
   }
 
   render(){

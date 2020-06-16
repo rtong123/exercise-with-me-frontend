@@ -5,9 +5,7 @@ export const deleteExercise = (routineId,exerciseId) => {
       method: 'DELETE'
     })
     .then(response => response.json())
-
     .then(exercise => dispatch({
-
       type: 'DELETE_EXERCISE',
       payload: {routineId,exerciseId}
     }))

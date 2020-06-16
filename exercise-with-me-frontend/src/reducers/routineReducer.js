@@ -13,6 +13,13 @@ export default function routineReducer(state = {routines:[]}, action){
         ...state,
         routines: [...state.routines, action.payload]}
 
+    case 'DELETE_ROUTINE':
+//if you find the routine --> take it out. and return all routines
+    return{
+      ...state,
+      routines: [...state.routines.filter(routine => routine.id !== action.payload)]
+    }
+
 
     case 'ADD_EXERCISE':
     return {

@@ -3,6 +3,8 @@ import React from 'react'
 import ExercisesContainer from '../containers/ExercisesContainer'
 import ExerciseForm from './ExerciseForm'
 import {Route,Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {deleteRoutine} from '../actions/deleteRoutine'
 
 
 
@@ -13,6 +15,10 @@ let routine = props.routines[props.match.params.id - 1]
 
 
 
+const handleDelete = (routineId) => {
+props.deleteRoutine(routineId)
+props.history.push('/routines')
+}
   return(
     <div>
       <h1>Routine {props.match.params.id}</h1>
@@ -24,10 +30,11 @@ let routine = props.routines[props.match.params.id - 1]
 
 
         <ExercisesContainer routine={routine}/>
-        <ExerciseForm routine={routine}/>  <button>Delete Routine</button>
+
+        <ExerciseForm routine={routine}/> <button onClick={() => handleDelete(routine.id)}>Delete Routine</button>
 
     </div>
     )
   }
 
-export default Routine
+export default connect(null,{deleteRoutine})(Routine)

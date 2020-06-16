@@ -11,7 +11,7 @@ import {deleteRoutine} from '../actions/deleteRoutine'
 
 const Routine = (props) => {
 
-let routine = props.routines[props.match.params.id - 1]
+let routine = props.routines.find(element => element.id == props.match.params.id)
 
 
 
@@ -19,6 +19,7 @@ const handleDelete = (routineId) => {
 props.deleteRoutine(routineId)
 props.history.push('/routines')
 }
+
   return(
     <div>
       <h1>Routine {props.match.params.id}</h1>

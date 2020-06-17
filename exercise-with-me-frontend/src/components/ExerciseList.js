@@ -5,7 +5,6 @@ import {deleteExercise} from '../actions/deleteExercise'
 const Exercises = (props) => {
 
   const handleDelete = (routineId,exerciseId) => {
-    console.log(exerciseId)
     props.deleteExercise(routineId,exerciseId)
   }
 

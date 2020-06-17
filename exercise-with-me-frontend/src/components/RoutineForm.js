@@ -41,7 +41,7 @@ class RoutineForm extends React.Component{
           <label>Body Weight: (in lbs)</label>
           <input type='text' value={this.state.body_weight} name="body_weight" onChange={this.handleChange}/><br></br>
           <label>Start Date:</label>
-          <input type='text' placeholder='MM/DD/YYYY' value={this.state.start_date} name="start_date" onChange={this.handleChange}/><br></br>
+          <input type='text' placeholder='YYYY/MM/DD' value={this.state.start_date} name="start_date" onChange={this.handleChange}/><br></br>
           <label>Days:</label>
           <input type='text' value={this.state.days} name="days" onChange={this.handleChange}/><br></br>
           <input type='submit'></input>

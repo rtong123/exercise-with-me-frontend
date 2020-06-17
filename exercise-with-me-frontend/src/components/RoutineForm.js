@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {addRoutine} from '../actions/addRoutine'
 import { withRouter } from 'react-router';
+import styled, { css } from 'styled-components'
+
 
 
 class RoutineForm extends React.Component{
@@ -30,6 +32,7 @@ class RoutineForm extends React.Component{
     })
     this.props.history.push('/routines')
   }
+
 
   render(){
     return(

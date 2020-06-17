@@ -12,12 +12,21 @@ const Routines = (props) => {
   font-weight: bold;
 `;
 
+const Button = styled.button`
+  background: transparent;
+  border-radius: 4px;
+  border: 4px solid palevioletred;
+  color: palevioletred;
+  margin: 0 1em;
+  padding: 0.25em 1em;
+`
+
 return (
   <div>
     <h1>Exercise Routines</h1>
     {props.routines.map(routine =>
       <div key={routine.id}>
-        <StyledLink><Link to={`/routines/${routine.id}`}>{routine.title}</Link></StyledLink>
+        <Button><Link to={`/routines/${routine.id}`}>{routine.title}</Link> </Button>
      </div>)}
 
 

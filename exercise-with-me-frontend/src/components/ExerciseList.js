@@ -4,15 +4,15 @@ import {deleteExercise} from '../actions/deleteExercise'
 
 const Exercises = (props) => {
 
-const handleDelete = (routineId,exerciseId) => {
-  console.log(exerciseId)
-props.deleteExercise(routineId,exerciseId)
-}
+  const handleDelete = (routineId,exerciseId) => {
+    console.log(exerciseId)
+    props.deleteExercise(routineId,exerciseId)
+  }
+
+  console.log(props.exercises);
 
   return(
     <div id="exercises">
-
-
       {props.exercises && props.exercises.map(exercise =>
 
         <li key={exercise.id}>

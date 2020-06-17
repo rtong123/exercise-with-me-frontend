@@ -5,20 +5,17 @@ import {Route,Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {deleteRoutine} from '../actions/deleteRoutine'
 
-
-
-
 const Routine = (props) => {
-//its UNDEFINED!!!!!!
-let routine = props.routines.find(element => element.id == props.match.params.id)
-console.log(routine)
+  //its UNDEFINED!!!!!!
+  let routine = props.routines.find(element => element.id == props.match.params.id)
+  console.log(routine)
 
 
 
-const handleDelete = (routineId) => {
-props.deleteRoutine(routineId)
-props.history.push('/routines')
-}
+  const handleDelete = (routineId) => {
+    props.deleteRoutine(routineId)
+    props.history.push('/routines')
+  }
 
   return(
     <div>

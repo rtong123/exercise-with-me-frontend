@@ -22,35 +22,24 @@ export default function routineReducer(state = {routines:[]}, action){
 
 
     case 'ADD_EXERCISE':
-
     //not adding the new exercise into the routines state
-    let routinesNew = state.routines.map(routine => {
-          if (routine.id === action.payload.routine_id) {
-            if (routine.exercises && routine.exercises.length > 0) {
-
-            routine.exercises.push(action.payload)
-            //this only gives a number, need to return the exercises
-              return{
-                routines: [...state.routines,routine]
-              }
-            }
-            else {
-              routine.exercises = [action.payload]
-              return {
-                routines: [...state.routines,routine]
-              }
-            }
+      const updatedRoutines = state.routines.map(routine => {
+        if (routine.id === action.payload.routine_id) {
+          if (routine.exercises && routine.exercises.length > 0) {
+            routine.exercises = [...routine.exercises, action.payload]
           }
-          debugger;
-        })
-
-
-
-
+          else {
+            routine.exercises = [action.payload]
+          }
+        }
+        return routine;
+      })
+      return {
+        routines: updatedRoutines
+      }
 
     case 'DELETE_EXERCISE':
     //delete the exercise from the routine
-
     const routines =  state.routines.map(routine => {
       if (routine.id === action.payload.routineId){
         routine.exercises = routine.exercises.filter(exercise => exercise.id !== action.payload.exerciseId)

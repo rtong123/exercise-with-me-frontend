@@ -8,11 +8,23 @@ const Exercises = (props) => {
     props.deleteExercise(routineId,exerciseId)
   }
 
-  console.log(props.exercises);
+  const exercises = props.exercises && props.exercises.sort(function(a, b) {
+          var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+          var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+          return 0;
+        });
+
+
 
   return(
     <div id="exercises">
-      {props.exercises && props.exercises.map(exercise =>
+      {exercises && exercises.map(exercise =>
 
         <li key={exercise.id}>
           <b>Exercise Name:</b>{exercise.name} <br></br>

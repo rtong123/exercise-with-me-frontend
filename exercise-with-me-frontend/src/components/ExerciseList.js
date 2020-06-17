@@ -1,6 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {deleteExercise} from '../actions/deleteExercise'
+import styled, { css } from 'styled-components'
+
 
 const Exercises = (props) => {
 
@@ -21,7 +23,6 @@ const Exercises = (props) => {
         });
 
 
-
   return(
     <div id="exercises">
       {exercises && exercises.map(exercise =>
@@ -33,7 +34,7 @@ const Exercises = (props) => {
           <b>Exercise Sets:</b>{exercise.sets} <br></br>
           <b>Exercise Reps:</b>{exercise.reps} <br></br>
           <br></br>
-            <button onClick={() => handleDelete(exercise.routine_id,exercise.id)}> Delete Exercise</button>
+      <button onClick={() => handleDelete(exercise.routine_id,exercise.id)}> Delete Exercise</button>
          </li>
        )}
     </div>

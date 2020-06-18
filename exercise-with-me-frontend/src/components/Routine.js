@@ -20,15 +20,14 @@ const Routine = (props) => {
   return(
     <div>
         <h1>Routine Title: {routine ? routine.title : null} </h1> <br></br>
-         <b>Body Weight:</b> {routine ? routine.body_weight : null} lbs <br></br>
+         <b>Body Weight:</b> {routine ? routine.body_weight : null}lbs <br></br>
          <b> Start Date: </b> {routinedate} <br></br>
          <b> Days: </b> {routine ? routine.days : null}<br></br>
-         <br></br>
 
 
         <ExercisesContainer routine={routine}/>
-
-        <ExerciseForm routine={routine}/> <button onClick={() => handleDelete(routine.id)}>Delete Routine</button>
+        <ExerciseForm routine={routine}/>
+        <button onClick={() => handleDelete(routine.id)}>Delete Routine</button>
 
     </div>
     )

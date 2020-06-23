@@ -5,33 +5,56 @@ import styled, { css } from 'styled-components'
 
 
 
-const Routines = (props) => {
+class RoutineList extends React.Component{
+
+ //  let button = styled.button`
+ //   background: transparent;
+ //   border-radius: 4px;
+ //   border: 2px solid palevioletred;
+ //   color: palevioletred;
+ //   margin: 0 1em;
+ //   padding: 0.25em 1em;
+ // `;
+
+ state = {
+   vote: 0
+ }
+
+  handleVote = (routineId) => {
+    //everytime a user clicks vote on a particular routine, set state +1
+   console.log(routineId)
+  this.props.routines.map(routine =>
+    console.log(routine.id)
+
+  )
+   this.setState({
+     vote: this.state.vote + 1
+     
+   })
+
+ }
 
 
-const Button = styled.button`
-  background: transparent;
-  border-radius: 4px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1em;
-  padding: 0.25em 1em;
-`;
+
+render(){
 
 return (
   <div>
     <h1>Exercise Routines</h1>
-    <Button>
-    {props.routines.map(routine =>
+
+    {this.props.routines.map(routine =>
       <div key={routine.id}>
         <Link to={`/routines/${routine.id}`}>{routine.title}</Link>
 
+          <button type="button" onClick={ () => this.handleVote(routine.id)}> Vote</button>  {this.state.vote}
+
      </div>)}
-    </Button>
 
 
 
   </div>
   )
+  }
 }
 
-export default Routines
+export default RoutineList

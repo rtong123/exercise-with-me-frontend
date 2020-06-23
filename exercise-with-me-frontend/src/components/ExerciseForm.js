@@ -19,10 +19,11 @@ class ExerciseForm extends React.Component{
     })
   }
 
-  handleSubmit = event => {
+  handleSubmit = event => { // ACBD
     event.preventDefault()
+    console.log("A");
     this.props.addExercise(this.state,this.props.routine.id)
-    console.log(this.props.routine.id)
+    console.log("B");
     this.setState({
       name:'',
       type_of_exercise:'',
@@ -30,6 +31,7 @@ class ExerciseForm extends React.Component{
       sets:'',
       reps:''
     })
+    console.log(this.state)
     //also need routine id
   }
 

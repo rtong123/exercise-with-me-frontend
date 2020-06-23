@@ -1,8 +1,7 @@
 export const addExercise = (exercise, routineId) => {
-
   return(dispatch) => {
-    console.log(exercise,routineId)
-    fetch(`http://localhost:3000/routines/${routineId}/exercises`, {
+    console.log("C");
+    return fetch(`http://localhost:3000/routines/${routineId}/exercises`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -13,7 +12,9 @@ export const addExercise = (exercise, routineId) => {
 
     })
     .then(response => response.json())
-    .then(exercise => dispatch({type: 'ADD_EXERCISE', payload: exercise}))
+    .then(exercise => {
+      console.log("D");
+      dispatch({type: 'ADD_EXERCISE', payload: exercise})})
   }
-
+//console.log("E");
 }

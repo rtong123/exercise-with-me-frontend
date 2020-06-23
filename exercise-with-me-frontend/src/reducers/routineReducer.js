@@ -9,9 +9,10 @@ export default function routineReducer(state = {routines:[]}, action){
 
 
     case 'ADD_ROUTINE':
-      return{
+      return {
         ...state,
-        routines: [...state.routines, action.payload]}
+        routines: [...state.routines, action.payload]
+      }
 
     case 'DELETE_ROUTINE':
 //if you find the routine --> take it out. and return all routines
@@ -33,7 +34,7 @@ export default function routineReducer(state = {routines:[]}, action){
           }
         }
         return routine;
-      })
+        })
       return {
         routines: updatedRoutines
       }
@@ -45,7 +46,7 @@ export default function routineReducer(state = {routines:[]}, action){
         routine.exercises = routine.exercises.filter(exercise => exercise.id !== action.payload.exerciseId)
       }
       return routine
-    })
+      })
     return {
       routines: [...state.routines,routines]
     }

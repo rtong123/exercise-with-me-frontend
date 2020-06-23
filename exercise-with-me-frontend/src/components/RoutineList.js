@@ -18,38 +18,41 @@ class RoutineList extends React.Component{
 
  state = {
    vote: 0
- }
-
-  handleVote = (routineId) => {
-    //everytime a user clicks vote on a particular routine, set state +1
-   console.log(routineId)
-  this.props.routines.map(routine =>
-    console.log(routine.id)
-
-  )
-   this.setState({
-     vote: this.state.vote + 1
-     
-   })
 
  }
 
+handleVote = (event,routineId) => {
+// if routine id matches the button
+console.log(event.target.value)
 
+  if (event.target.value == routineId){
+    this.setState({
+      vote: this.state.vote += 1
+    })
+  }
+  else{
+    console.log('nu')
+  }
+}
+
+
+
+// this.setState({
+//   vote: this.state.vote + 1
+// })
 
 render(){
-
+  console.log(this.state.vote)
 return (
   <div>
     <h1>Exercise Routines</h1>
 
     {this.props.routines.map(routine =>
       <div key={routine.id}>
+
         <Link to={`/routines/${routine.id}`}>{routine.title}</Link>
-
-          <button type="button" onClick={ () => this.handleVote(routine.id)}> Vote</button>  {this.state.vote}
-
+          <button type="button" onClick={ (e) => this.handleVote(e,routine.id) } value={routine.id}> Vote</button>  {this.state.vote}
      </div>)}
-
 
 
   </div>

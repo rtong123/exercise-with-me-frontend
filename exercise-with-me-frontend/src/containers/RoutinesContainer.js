@@ -34,6 +34,6 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {fetchRoutines})(RoutinesContainer)
+export default connect(mapStateToProps, { fetchRoutines })(RoutinesContainer)
 
 //map dispatch to props -- connect fetchroutines to store

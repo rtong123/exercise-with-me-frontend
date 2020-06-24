@@ -2,6 +2,8 @@ import React from 'react'
 import Routine from './Routine'
 import {Route, Link} from 'react-router-dom'
 import styled, { css } from 'styled-components'
+import {connect} from 'react-redux'
+import {fetchRoutines} from '../actions/fetchRoutines'
 
 
 
@@ -14,12 +16,16 @@ class RoutineList extends React.Component{
    this.state = { routines: props.routines }
   }
 
-  componentWillReceiveProps(props) {
-    this.setState({
-      routines: props.routines
-    })
-  }
 
+
+ static getDerivedStateFromProps(props, state){
+   return {
+     routines: props.routines
+   }
+ }
+
+//do not have routines right away, get the new prop.
+// because its async, we need to find a way to get the new props to update state
 
  handleVote = (routineId) => {
    // if routine id matches the button
@@ -39,11 +45,10 @@ class RoutineList extends React.Component{
 }
 
   render(){
-  console.log(this.state.routines)
     return (
       <div>
         <h1>Exercise Routines</h1>
-        {this.state.routines.map(routine =>
+        {this.props.routines.map(routine =>
           <div key={routine.id}>
             <Link to={`/routines/${routine.id}`}>{routine.title}</Link>
               <button type="button" onClick={() => this.handleVote(routine.id) } value={routine.id}>
@@ -56,4 +61,4 @@ class RoutineList extends React.Component{
   }
 }
 
-export default RoutineList
+export default connect(null, {fetchRoutines})(RoutineList)

@@ -5,7 +5,8 @@ export function fetchRoutines(){
     .then(routines => dispatch({
       type: 'FETCH_ROUTINES',
       payload: routines
-      }))
+      })
+    )
     }
 }
 //call dispatch when we get the fetch request

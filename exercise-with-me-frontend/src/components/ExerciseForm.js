@@ -6,7 +6,6 @@ class ExerciseForm extends React.Component{
 
   state = {
     name:'',
-    //maybe add a default value if change to dropdown
     type_of_exercise:'',
     equipment:'',
     sets:'',

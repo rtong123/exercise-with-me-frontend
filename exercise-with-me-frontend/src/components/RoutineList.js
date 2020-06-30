@@ -9,8 +9,6 @@ import {fetchRoutines} from '../actions/fetchRoutines'
 
 class RoutineList extends React.Component{
 
-
-
  constructor(props){
    super(props);
    this.state = { routines: props.routines }
@@ -32,16 +30,21 @@ class RoutineList extends React.Component{
   const updatedRoutine = this.state.routines.map(routine => {
     if (routine.id == routineId) {
       if (routine.votes) {
+        console.log('1')
           routine.votes += 1
       } else {
+        console.log('2')
         routine.votes = 1
       }
     }
+  console.log('hi')
     return routine;
   })
+  console.log('bye')
   this.setState({
     routines: updatedRoutine
-  })
+  },console.log('ruff'))
+  console.log('meow')
 }
 
   render(){

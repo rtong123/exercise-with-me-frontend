@@ -38,7 +38,7 @@ class ExerciseForm extends React.Component{
     return(
       <div id='exerciseform'>
       <form onSubmit={this.handleSubmit}>
-
+        <h1>Exercise Form</h1>
         <label>Name</label>
         <input type='text' value={this.state.name} name="name" onChange={this.handleChange}/>
         <br></br>

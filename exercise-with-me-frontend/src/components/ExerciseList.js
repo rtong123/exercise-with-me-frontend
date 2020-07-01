@@ -13,6 +13,7 @@ const Exercises = (props) => {
   const exercises = props.exercises && props.exercises.sort(function(a, b) {
           var nameA = a.name.toUpperCase(); // ignore upper and lowercase
           var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+          console.log(nameA,nameB)
           if (nameA < nameB) {
             return -1;
           }

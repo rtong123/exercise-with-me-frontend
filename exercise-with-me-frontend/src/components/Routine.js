@@ -4,6 +4,7 @@ import ExerciseForm from './ExerciseForm'
 import {Route,Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {deleteRoutine} from '../actions/deleteRoutine'
+import EditRoutine from './EditRoutine'
 
 const Routine = (props) => {
   let routine = props.routines.find(element => element.id == props.match.params.id)
@@ -27,7 +28,9 @@ const Routine = (props) => {
 
         <ExercisesContainer routine={routine}/>
         <ExerciseForm routine={routine}/>
-        <button onClick={() => handleDelete(routine.id)}>Delete Routine</button>
+          <button onClick={() => handleDelete(routine.id)}>Delete Routine</button>
+
+        <EditRoutine routine={routine}/>
 
     </div>
     )

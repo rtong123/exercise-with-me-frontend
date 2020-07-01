@@ -7,14 +7,15 @@ import styled, { css } from 'styled-components'
 
 
 class EditRoutine extends React.Component{
-
-  state = {
-    title:'',
+constructor(props){
+  super(props);
+  this.state = {
+    title: '',
     body_weight:'',
     // start_date:'',
     days:''
   }
-
+}
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value

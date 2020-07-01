@@ -34,9 +34,10 @@ const Exercises = (props) => {
           <b>Exercise Equipment:</b>{exercise.equipment} <br></br>
           <b>Exercise Sets:</b>{exercise.sets} <br></br>
           <b>Exercise Reps:</b>{exercise.reps} <br></br>
-          <br></br>
       <button onClick={() => handleDelete(exercise.routine_id,exercise.id)}> Delete Exercise</button>
+          <br></br>
          </li>
+
        )}
     </div>
   )

@@ -3,14 +3,16 @@ import {connect} from 'react-redux'
 import {addExercise} from '../actions/addExercise'
 
 class ExerciseForm extends React.Component{
-
-  state = {
+constructor(props){
+super(props)
+  this.state = {
     name:'',
     type_of_exercise:'',
     equipment:'',
     sets:'',
     reps:''
   }
+}
 
   handleChange = (event) => {
     this.setState({
@@ -51,7 +53,7 @@ class ExerciseForm extends React.Component{
         <label>Sets</label>
         <input type='text' value={this.state.sets} name="sets" onChange={this.handleChange}/><br></br>
         <br></br>
-        <input type='submit' value='Update Routine'></input>
+        <input type='submit' value='Add Exercise'></input>
       </form>
       </div>
     )

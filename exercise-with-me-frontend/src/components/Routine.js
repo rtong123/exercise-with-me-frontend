@@ -8,9 +8,11 @@ import EditRoutine from './EditRoutine'
 
 const Routine = (props) => {
   let routine = props.routines.find(element => element.id == props.match.params.id)
+
   console.log(routine)
-  // let routinedate = routine ? routine.start_date.split(" ").reverse().join().split(',').join().slice(0,10) : null
+  let routinedate = routine ? routine.created_at.split(" ").reverse().join().split(',').join().slice(0,10) : null
   // console.log(routinedate)
+
 
 
   const handleDelete = (routineId) => {
@@ -20,12 +22,12 @@ const Routine = (props) => {
 
   return(
     <div>
-        <h1>Routine Title: {routine ? routine.title : null} </h1> <br></br>
+        <h1>Routine Title: {routine ? routine.title : null} </h1>
          <b>Body Weight:</b> {routine ? routine.body_weight : null}lbs <br></br>
-         <b> Start Date: </b> {routine ? routine.start_date : null} <br></br>
+         <b> Start Date: </b> {routine ? routinedate : null}<br></br> 
          <b> Days: </b> {routine ? routine.days : null}<br></br>
 
-
+         <br></br>   <br></br>
         <ExercisesContainer routine={routine}/>
         <ExerciseForm routine={routine}/>
           <button onClick={() => handleDelete(routine.id)}>Delete Routine</button>

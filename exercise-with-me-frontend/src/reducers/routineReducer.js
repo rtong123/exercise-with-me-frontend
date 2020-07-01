@@ -51,7 +51,19 @@ export default function routineReducer(state = {routines:[]}, action){
       routines: [...state.routines,routines]
     }
 
-    // match exercise id --> adn get it out of routines.
+    case 'EDIT_ROUTINE':
+    //if edited version matches the routine. retunr the newly made one.
+  let list = state.routines.map(routine => {
+    if (routine.id === action.payload.id){
+      console.log(action.payload)
+      return action.payload
+    }
+    else{
+      return routine
+    }
+  })
+  return{...state, routines: list}
+  //filter out and take the edited version
 
 
 

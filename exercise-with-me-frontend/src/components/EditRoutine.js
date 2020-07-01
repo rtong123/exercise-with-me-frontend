@@ -23,7 +23,9 @@ class EditRoutine extends React.Component{
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.editRoutine(this.state)
+    let routine = {...this.state, id: this.props.routine.id}
+    console.log(routine)
+    this.props.editRoutine(routine)
     this.setState({
       title: '',
       body_weight: '',

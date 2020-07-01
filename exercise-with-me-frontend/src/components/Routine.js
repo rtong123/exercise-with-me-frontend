@@ -19,6 +19,14 @@ const Routine = (props) => {
     padding: 0.25em 1em;
   `;
 
+  const Button2 = styled.button`
+    background: transparent;
+    border-radius: 4px;
+    border: 2px solid white;
+    color: black;
+    margin: 0 1em;
+    padding: 0.25em 1em;
+  `;
   let routine = props.routines.find(element => element.id == props.match.params.id)
 
   console.log(routine)
@@ -33,15 +41,16 @@ const Routine = (props) => {
 
   return(
     <div>
-        <h1>Routine Title: {routine ? routine.title : null} </h1>
+        <Button2><h1>Routine Title: {routine ? routine.title : null} </h1>
          <b>Body Weight:</b> {routine ? routine.body_weight : null}lbs <br></br>
          <b> Start Date: </b> {routine ? routinedate : null}<br></br>
          <b> Days: </b> {routine ? routine.days : null}<br></br>
+         <button onClick={() => handleDelete(routine.id)}>Delete Routine</button></Button2>
+
 
          <br></br>   <br></br>
         <ExercisesContainer routine={routine}/>
-        <Button><ExerciseForm routine={routine}/>
-        <button onClick={() => handleDelete(routine.id)}>Delete Routine</button></Button>
+        <Button><ExerciseForm routine={routine}/></Button>
 
         <Button><EditRoutine routine={routine}/></Button>
 
